@@ -15,10 +15,10 @@ export default defineConfig(({ command }) => ({
   },
   server: {
     host: true,
-    allowedHosts: "all",
+    allowedHosts: true, // "all" yerine true yaptık
   },
   preview: {
     host: true,
-    allowedHosts: "all",
-  },
+    allowedHosts: true, // "all" yerine true yaptık
+  }, 
 }));
