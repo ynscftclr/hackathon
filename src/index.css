@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ───────── Base ───────── */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply min-h-screen bg-gray-50 font-sans text-gray-900 antialiased transition-colors duration-300;
+  }
+  .dark body {
+    @apply bg-zinc-950 text-zinc-100;
+  }
+}
+
+/* ───────── Glassmorphism utilities ───────── */
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-white/60 shadow-glass backdrop-blur-xl;
+  }
+  .dark .glass {
+    @apply border-white/[0.06] bg-zinc-900/60;
+  }
+
+  .glass-strong {
+    @apply border border-white/20 bg-white/80 shadow-glass backdrop-blur-2xl;
+  }
+  .dark .glass-strong {
+    @apply border-white/[0.08] bg-zinc-900/80;
+  }
+
+  /* Skeleton shimmer */
+  .skeleton {
+    @apply animate-shimmer rounded-xl bg-gray-200;
+  }
+  .dark .skeleton {
+    @apply bg-zinc-800;
+  }
+
+  /* Pill badge base */
+  .badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-semibold tracking-wide;
+  }
+
+  /* Scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-300;
+  }
+  .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-zinc-700;
+  }
+}
+
+/* ───────── Inter variable font weight fine-tuning ───────── */
+::selection {
+  @apply bg-accent-200 text-accent-900;
+}
+.dark ::selection {
+  @apply bg-accent-800 text-accent-100;
+}

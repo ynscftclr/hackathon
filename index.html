@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WorkBoard — İş Yönetim Platformu</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900 antialiased transition-colors duration-300">
+    <div id="root"></div>
+    <script>
+      // Apply dark mode from localStorage before first paint to avoid flash
+      if (localStorage.getItem("workboard_theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
