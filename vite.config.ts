@@ -5,10 +5,9 @@ import mockApiPlugin from "./mock/mockApiPlugin.js";
 
 export default defineConfig({
   plugins: [react(), mockApiPlugin()],
-  resolve: {
-    alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
-    },
+  server: {
+    host: true,
+    allowedHosts: "all",
   },
   preview: {
     host: true,
